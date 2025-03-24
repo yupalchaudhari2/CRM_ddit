@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Sign In Via Google" %}{% endblock %}
+
+{% block content %}
+<h2>{% trans "Sign In Via Google" %}</h2>
+<p>{% trans "You are about to sign in using a third-party account from Google." %}</p>
+<form method="post" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    <button type="submit">{% trans "Continue" %}</button>
+</form>
+{% endblock %}

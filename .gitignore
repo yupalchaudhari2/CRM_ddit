@@ -1,0 +1,15 @@
+# Ignore virtual environment and database files
+myvenv/
+*.sqlite3
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+
+# Ignore system files
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore migrations
+**/migrations/
