@@ -39,16 +39,15 @@ class signUpform(UserCreationForm):
 
 
 class AddRecordForm(forms.ModelForm):
-    first_name=forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First name'}))
-    last_name= forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Second name'}))
-    email = forms.EmailField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Email address'}))
-    phone_number =forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'phone'}))
-    address= forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Address'}))
-    city= forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'City'}))
-    state= forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'State'}))
-    zipcode= forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Zipcode'})) 
- 
+    first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"First Name", "class":"form-control"}), label="")
+    last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Last Name", "class":"form-control"}), label="")
+    email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Email", "class":"form-control"}), label="")
+    phone = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Phone", "class":"form-control"}), label="")
+    address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Address", "class":"form-control"}), label="")
+    city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"City", "class":"form-control"}), label="")
+    state = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"State", "class":"form-control"}), label="")
+    zipcode = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Zipcode", "class":"form-control"}), label="")
+
     class Meta:
         model = Record
-        exclude=("user",) # this wil add all the fields of above
-        
+        exclude = ("user",)  # Make sure this excludes only user, not phone
