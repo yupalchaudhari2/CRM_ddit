@@ -3,15 +3,15 @@
 
 <div class="card">
   <div class="card-header">
-    <strong>Update Record</strong>
+    <strong>Add New Record</strong>
   </div>
   <div class="card-body">
-    <form method="POST">
+    <form method="POST" action="{% url 'add_record' %}">
       {% csrf_token %}
       
       {{ form.as_p }}
       
-      <button type="submit" class="btn btn-primary">Update Record</button>
+      <button type="submit" class="btn btn-primary">Add Record</button>
     </form>
   </div>
 </div>
